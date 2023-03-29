@@ -1,18 +1,15 @@
-## Getting Started
+# Imersão Alura Java
+ 
+## Aula 01 - Consumindo uma API de Filmes com Java
+ 
+  - [x] Buscar os filmes mais populares através da API do IMDB
+  - [x] Apresentar notas com emoji de estrela e cores no console
+  - [x] Armazenar a key gerada pelo IMDB fora do código
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Tecnologia
+- ``Java - 17.0.5 2022-10-18 LTS``
 
-## Folder Structure
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Resultado do 1º dia
+![resultado_1dia_imersao](https://github.com/mayconlyn/assets/blob/master/Captura%20de%20tela%202023-03-29%20121432.png)

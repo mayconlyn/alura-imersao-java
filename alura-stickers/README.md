@@ -1,6 +1,7 @@
 # Imersão Alura Java
  
 ## Aula 01 - Consumindo uma API de Filmes com Java
+![Badge Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=GREEN&style=for-the-badge)
  
   - [x] Buscar os filmes mais populares através da API do IMDB
   - [x] Apresentar notas com emoji de estrela e cores no console

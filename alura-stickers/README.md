@@ -25,5 +25,5 @@
   - [x] Fazer com que o texto da figurinha seja personalizado de acordo com as classificações do IMDB.
 
 ### Resultado do 2º dia
-
+![resultado_2dia_imersao](https://github.com/mayconlyn/assets/blob/master/Novo%20Projeto%20(7).jpg)
 

@@ -1,6 +1,8 @@
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -33,17 +35,25 @@ public class App {
         
 
         //exibir e manipular os dados
-
+        var geradora = new GeradoraDeFigurinhas();
         for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println("\u001b[38;2;90;114;140mTitulo: \u001b[m"+"\u001b[38;2;255;255;255m"+filme.get("title")+"\u001b[m");
-            System.out.println("\u001b[38;2;90;114;140mPoster: \u001b[m"+"\u001b[38;2;255;255;255m"+filme.get("image")+"\u001b[m");
+
+            String urlString = filme.get("image");
+            String titulo = filme.get("title");
+            double imDbRating = Double.parseDouble(filme.get("imDbRating"));
+            
+            InputStream inputStream = new URL(urlString).openStream();
+            String nomeArquivo = titulo.replace(":", "-") +".png";
+
+            System.out.println("\u001b[38;2;90;114;140mTitulo: \u001b[m"+"\u001b[38;2;255;255;255m"+titulo+"\u001b[m");
+            System.out.println("\u001b[38;2;90;114;140mPoster: \u001b[m"+"\u001b[38;2;255;255;255m"+urlString+"\u001b[m");
             System.out.println("\u001b[102mClassificação: "+filme.get("imDbRating")+"\u001b[m");
             if(filme.get("imDbRating").equalsIgnoreCase(""))
-            stars(0);
+               stars(0);
             else
-            stars((int)Double.parseDouble(filme.get("imDbRating")));
-            
-            
+               stars((int)imDbRating);
+
+            geradora.criar(inputStream, nomeArquivo, imDbRating);
             System.out.println();
         }
     }

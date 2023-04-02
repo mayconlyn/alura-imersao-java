@@ -30,12 +30,12 @@
 ## Aula 03 - LIGANDO AS PONTAS, REFATORAÇÃO E ORIENTAÇÃO A OBJETOS
 ![Badge Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=GREEN&style=for-the-badge)
 
-  - [x]Refatorar o código
-  - [x]Transformar a classe Conteudo em um RECORD
-  - [x]Criar excessões personalizadas
-  - [x]Criar classe Enum para realizar as configurações
-  - [x]Acrescentado uma forma de padronizar os tamanhos das imagens geradas.
-  - [x]Extrair informações da API da NASA ou qualquer outra que possa conter imagem
+  - [x] Refatorar o código
+  - [x] Transformar a classe Conteudo em um RECORD
+  - [x] Criar excessões personalizadas
+  - [x] Criar classe Enum para realizar as configurações
+  - [x] Acrescentado uma forma de padronizar os tamanhos das imagens geradas.
+  - [x] Extrair informações da API da NASA ou qualquer outra que possa conter imagem
 
 ### Resultado do 3º dia
 ![resultado_2dia_imersao](https://github.com/mayconlyn/assets/blob/master/Nasa%20API.jpg)

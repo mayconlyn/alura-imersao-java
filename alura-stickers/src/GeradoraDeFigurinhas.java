@@ -18,20 +18,27 @@ import javax.imageio.ImageIO;
 
 public class GeradoraDeFigurinhas {
 
-    public void criar(InputStream inputStream, String nomeArquvivo, double imDbRating) throws Exception{
+
+    public void criar(InputStream inputStream, String nomeArquvivo, double raiting) throws Exception{
  
-        //InputStream inputStream = new FileInputStream(new File("C:\\workspace-estudos\\alura-imersao-java\\alura-stickers\\entrada\\filme.jpg"));
-        //InputStream inputStream = new URL("https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_Ratio0.6716_AL_.jpg").openStream();
-        
         //leitura da imagem
         BufferedImage imagemOriginal = ImageIO.read(inputStream);
+        int largura;
+        int altura;
+        Image tmp;
 
         //redmensionar a imagem
-        Image tmp = imagemOriginal.getScaledInstance(1089, 1500, Image.SCALE_SMOOTH);
+        if(imagemOriginal.getHeight() > imagemOriginal.getWidth()){
+            largura = 1090;
+            altura = 1500;
+        }
+        else{
+            largura = 1080;
+            altura = 710;
+        }
+        tmp = imagemOriginal.getScaledInstance(largura, altura, Image.SCALE_SMOOTH);
 
-        //criar nova imagem com transarência e com tamanho novo
-        int largura = 1089;
-        int altura = 1500;
+        //criar nova imagem com transarência e com tamanho novo 
         int novaAltura = altura + 200;
         BufferedImage novaImagem = new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
 
@@ -39,15 +46,19 @@ public class GeradoraDeFigurinhas {
         Graphics2D graphics = (Graphics2D) novaImagem.getGraphics();
         graphics.drawImage(tmp, 0, 0, null);
 
-        //imagem de Raiting
+        //desenhar a imagem de Raiting
         String texto;
         BufferedImage imagemRaiting;
-        if(imDbRating >= 7.5)
+        int alturaRaiting = altura - 308;
+        if(raiting >= 7.5)
         {
             imagemRaiting = ImageIO.read(new FileInputStream(new File("C:\\workspace-estudos\\alura-imersao-java\\alura-stickers\\entrada\\top.png")));
-            texto = "TOPPER";
+            if(raiting == 10)
+                texto = nomeArquvivo.replaceAll(".png", "");
+            else
+                texto = "TOPPER";
         }    
-        else if(imDbRating >= 6 ){
+        else if(raiting >= 6 ){
             imagemRaiting = ImageIO.read(new FileInputStream(new File("C:\\workspace-estudos\\alura-imersao-java\\alura-stickers\\entrada\\mediano.png")));
             texto = "MEDIANO";
         }
@@ -56,20 +67,19 @@ public class GeradoraDeFigurinhas {
         { 
             imagemRaiting = ImageIO.read(new FileInputStream(new File("C:\\workspace-estudos\\alura-imersao-java\\alura-stickers\\entrada\\meia-boca.png")));
             texto = "MEIA BOCA";
-        }     
-        graphics.drawImage(imagemRaiting, 0, 1200, null);
+        }    
+        graphics.drawImage(imagemRaiting, 0, alturaRaiting, null);
 
         // configurar a fonte
-        var font = new Font("Impact", Font.BOLD, 120);
+        var font = new Font("Impact", Font.BOLD, 60);
         graphics.setFont(font);
         graphics.setColor(Color.MAGENTA);
 
         //escrever uma frase na nova imagem
-
         FontMetrics fontMetrics = graphics.getFontMetrics();
         Rectangle2D retangulo = fontMetrics.getStringBounds(texto, graphics);
         int larguraTexto = (int) retangulo.getWidth();
-        int posX = (largura-larguraTexto)-70;
+        int posX = (largura-larguraTexto)/2;
         int posY = novaAltura-50;
         graphics.drawString(texto, posX, posY);
 
@@ -91,5 +101,6 @@ public class GeradoraDeFigurinhas {
         // escrever a nova imagem em um arquivo
         ImageIO.write(novaImagem, "png", new File("C:\\workspace-estudos\\alura-imersao-java\\alura-stickers\\saida\\"+nomeArquvivo));
     }
+
     
 }

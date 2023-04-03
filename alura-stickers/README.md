@@ -2,8 +2,12 @@
 
 ### Tecnologia
 - ``Java - 17.0.5 2022-10-18 LTS``
+- ``Spring - 3.0``
+- ``MongoDB``
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
  
 ## Aula 01 - Consumindo uma API de Filmes com Java
 ![Badge Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=GREEN&style=for-the-badge)
@@ -39,4 +43,16 @@
 
 ### Resultado do 3º dia
 ![resultado_2dia_imersao](https://github.com/mayconlyn/assets/blob/master/Nasa%20API.jpg)
+
+
+## Aula 04 - CRIANDO NOSSA PRÓPRIA API COM SPRING
+![Badge Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUÍDO&color=GREEN&style=for-the-badge)
+
+  - [x] Criação de uma API, utilizando Spring Boot, que retorna as melhores linguagens
+  - [x] Utilização de um Banco NoSql (MongoDB)
+  - [x] Utilização do Postman para testar o CRUD
+
+
+### Resultado do 4º dia
+![resultado_2dia_imersao](https://raw.githubusercontent.com/mayconlyn/assets/master/dia-4.png)
 

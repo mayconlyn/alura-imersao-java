@@ -5,7 +5,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        API api = API.NASA;
+        API api = API.LINGUAGENS;
         String url = api.getUrl();
         
         ExtratorDeConteudo extrator = api.getExtrator();
@@ -15,9 +15,9 @@ public class App {
         
         //exibir e manipular os dados
         List<Conteudo> conteudos = extrator.extraiConteudos(json);
-        
+
         var geradora = new GeradoraDeFigurinhas();
-        for (int i = 0; i < 3 ; i ++) {
+        for (int i = 0; i < 7 ; i ++) {
             Conteudo conteudo = conteudos.get(i);
             String urlString = conteudo.urlImagem();
             

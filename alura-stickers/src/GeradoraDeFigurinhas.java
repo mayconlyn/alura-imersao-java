@@ -29,12 +29,16 @@ public class GeradoraDeFigurinhas {
 
         //redmensionar a imagem
         if(imagemOriginal.getHeight() > imagemOriginal.getWidth()){
-            largura = 1090;
-            altura = 1500;
+            largura = SizedImagem.IMAGE_VERTCAL.getLargura();
+            altura = SizedImagem.IMAGE_VERTCAL.getAltura();
+
+        }else if(imagemOriginal.getHeight() == imagemOriginal.getWidth()){
+            largura = SizedImagem.IMAGE_LADOS_IGUAIS.getLargura();
+            altura = SizedImagem.IMAGE_LADOS_IGUAIS.getAltura();
         }
         else{
-            largura = 1080;
-            altura = 710;
+            largura = SizedImagem.IMAGE_HORIZONTAL.getLargura();
+            altura = SizedImagem.IMAGE_HORIZONTAL.getAltura();
         }
         tmp = imagemOriginal.getScaledInstance(largura, altura, Image.SCALE_SMOOTH);
 
